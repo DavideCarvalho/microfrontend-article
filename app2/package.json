@@ -1,0 +1,30 @@
+{
+  "name": "app2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "parcel build index.html",
+    "build:babel": "babel index.js --out-file ./dist/index.js",
+    "build:rollup": "rollup -c",
+    "serve": "live-server --port=8081 --cors"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hybrids": "1.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.2.2",
+    "@babel/preset-env": "7.2.3",
+    "live-server": "1.2.1",
+    "rollup-plugin-commonjs": "9.2.0",
+    "rollup-plugin-node-builtins": "2.1.2",
+    "rollup-plugin-node-globals": "1.4.0",
+    "rollup-plugin-node-resolve": "4.0.0",
+    "rollup-plugin-terser": "3.0.0"
+  }
+}

@@ -1,29 +1,26 @@
 import App from './App.html';
 
-new App({
-	target: document.body,
-	data: {
-		name: 'world'
-	}
-});
-
-const app = {}
-
-const appName = 'Svelte Module';
+const appName = 'svelte-module1';
 
 const module = {
-	bootstrap: () => {
-	},
+	bootstrap: () => Promise.resolve(),
 	mount: () => {
-		document.body.innerHTML = "<x-app></x-app>";
+		new App({
+			target: document.body,
+			data: {
+				name: 'app1'
+			}
+		});
+		return Promise.resolve();
 	},
 	unmount: () => {
-		document.body.innerHTML = "";
+		document.body.innerHTML = '';
+		return Promise.resolve();
 	}
 };
 
-const loadCondition = () => location.pathname.indexOf("/app1/") === 0;
+const loadCondition = () => 
+	location.pathname === '/' 
+	|| location.pathname.indexOf("/app1") === 0;
 
 export { appName, module, loadCondition };
-
-// export default app;
