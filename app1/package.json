@@ -14,11 +14,11 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "postinstall": "rollup -c && live-server --port=8080 --cors",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
     "start": "sirv public",
     "start:dev": "sirv public --dev",
-    "postinstall": "rollup -c",
     "serve": "live-server --port=8080 --cors"
   }
 }
